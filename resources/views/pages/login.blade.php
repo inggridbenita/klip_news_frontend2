@@ -9,9 +9,7 @@
 @endpush
 
 @section('content')
-  <header>
-    <p>KLIPNews</p>
-  </header>
+  @include('includes.header')
   <div id=formContainer>
     <form action="">
       <div class="left-side">

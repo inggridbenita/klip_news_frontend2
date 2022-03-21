@@ -17,23 +17,8 @@ button {
   padding: 5px 10px;
 }
 
-header, form, .left-side, .right-side {
+form, .left-side, .right-side {
   display: flex;
-}
-
-header {
-  background-color: #B5AAAA;
-  height: 10vh;
-  justify-content: center;
-}
-
-header p {
-  font-family: 'Ribeye';
-  color: white;
-  align-self: center;
-  font-size: 25px;
-  margin: 0px;
-  padding: 0px;
 }
 
 #formContainer {

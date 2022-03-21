@@ -1,0 +1,18 @@
+header {
+  display: flex;
+}
+
+header {
+  background-color: #B5AAAA;
+  height: 10vh;
+  justify-content: center;
+}
+
+header p {
+  font-family: 'Ribeye';
+  color: white;
+  align-self: center;
+  font-size: 25px;
+  margin: 0px;
+  padding: 0px;
+}
