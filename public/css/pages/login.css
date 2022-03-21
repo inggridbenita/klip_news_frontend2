@@ -5,6 +5,11 @@ body {
   font-weight: 300;
 }
 
+::placeholder {
+  font-family: 'Roboto';
+  font-weight: 300;
+}
+
 button {
   background-color: #B5AAAA;
   color: white;
@@ -61,7 +66,7 @@ form {
 .left-side input {
   margin-bottom: 10px;
   width: 300px;
-  padding-left: 20px;
+  padding-left: 25px;
 }
 
 .left-side button {
@@ -77,6 +82,13 @@ form {
   position: absolute;
   height: 15px;
   left: 5px;
+  top: 4px;
+}
+
+.inputWrapper img.separator {
+  position: absolute;
+  height: 15px;
+  left: 23px;
   top: 4px;
 }
 
