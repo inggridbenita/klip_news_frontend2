@@ -1,12 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  @include('includes.meta')
-  <title>Login</title>
-  @include('includes.style')
+@extends('layouts.login_and_signup')
+
+@section('title')
+  Login
+@endsection
+
+@push('name')
   <link rel="stylesheet" href="/css/pages/login.css">
-</head>
-<body>
+@endpush
+
+@section('content')
   <header>
     <p>KLIPNews</p>
   </header>
@@ -34,6 +36,7 @@
       </div>
     </form>
   </div>
-  <script src="/js/pages/login.js" type="text/javascript"></script>
-</body>
-</html>
+  @push('add-on-script')
+    <script src="/js/pages/login.js" type="text/javascript"></script>
+  @endpush
+@endsection
