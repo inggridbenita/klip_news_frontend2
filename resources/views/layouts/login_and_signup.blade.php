@@ -4,8 +4,7 @@
   @include('includes.meta')
   <title>@yield('title')</title>
   @include('includes.style')
-  @stack('add-on-style')
-  <link rel="stylesheet" href="/css/pages/login.css">
+  <link rel="stylesheet" href="/css/pages/login_and_signup.css">
 </head>
 <body>
   @yield('content')

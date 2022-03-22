@@ -4,10 +4,6 @@
   Login
 @endsection
 
-@push('name')
-  <link rel="stylesheet" href="/css/pages/login.css">
-@endpush
-
 @section('content')
   @include('includes.header')
   <div id=formContainer>
@@ -17,13 +13,13 @@
         <div class="inputWrapper">
           <img src="/images/icons/user.png" alt="" srcset="" class="left-icon">
           <img src="/images/icons/separator.png" alt="" class="separator">
-          <input type="text" id="inputEmail" placeholder="email / phone number">
+          <input type="text" id="inputEmail" placeholder="email / phone number" required>
         </div>
         <label for="">PASSWORD</label>
         <div class="inputWrapper">
           <img src="/images/icons/padlock.png" alt="" srcset="" class="left-icon">
           <img src="/images/icons/separator.png" alt="" class="separator">
-          <input type="password" id="inputPassword" placeholder="password">
+          <input type="password" id="inputPassword" placeholder="password" required>
           <img src="/images/icons/hide.png" alt="" srcset="" class="right-icon" id="passwordToggle">
         </div>
         <button type="submit">Login</button>
