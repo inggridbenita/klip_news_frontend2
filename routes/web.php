@@ -14,8 +14,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect()->route('login');
 });
 
-Route::get('/login', 'LoginController@index');
-Route::get('/signup', 'SignUpController@index');
+Route::middleware('IsNotLogin')->group(function() {
+    Route::get('/login', 'LoginController@index')->name('login');
+    Route::get('/signup', 'SignUpController@index')->name('signup');
+});
