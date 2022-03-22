@@ -26,7 +26,7 @@
       </div>
       <div class="right-side">
         <p>No Account?</p>
-        <a href="/signup" id="btnSignUp"><button>Sign Up</button></a>
+        <a href="{{ route('signup') }}" id="btnSignUp" class="btn">Sign Up</a>
       </div>
     </form>
   </div>

@@ -35,7 +35,7 @@
       </div>
       <div class="right-side">
         <p>Already have an account?</p>
-        <a href="/signup" id="btnLogin"><button>Login</button></a>
+        <a href="{{ route('login') }}" id="btnLogin" class="btn">Login</a>
       </div>
     </form>
   </div>
