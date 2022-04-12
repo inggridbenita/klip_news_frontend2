@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable
@@ -33,11 +34,28 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $hidden = [
-        'password',
         'remember_token',
     ];
 
     public static function get_user_count() {
         return DB::table('users')->count();
+    }
+
+    public static function check_login($email, $password)
+    {
+        $is_email = filter_var($email, FILTER_VALIDATE_EMAIL);
+        $user = NULL;
+        if ($is_email) {
+            $user = User::where('email', $email)->get();
+        }
+        else {
+            $user = User::where('phone_number', $email)->get();
+        }
+
+        $isPasswordTrue = false;
+        if (count($user) == 1) {
+            $isPasswordTrue = Hash::check($password, $user[0]->password);
+        }
+        return $isPasswordTrue;
     }
 }

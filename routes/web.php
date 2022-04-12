@@ -17,6 +17,8 @@ Route::get('/', function () {
     return redirect()->route('login');
 });
 
+Route::get('/test', 'LoginController@check_login');
+
 Route::middleware('IsNotLogin')->group(function() {
     Route::get('/login', 'LoginController@index')->name('login');
     Route::get('/signup', 'SignUpController@index')->name('signup');
