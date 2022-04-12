@@ -21,3 +21,9 @@ Route::middleware('IsNotLogin')->group(function() {
     Route::get('/login', 'LoginController@index')->name('login');
     Route::get('/signup', 'SignUpController@index')->name('signup');
 });
+
+Route::prefix('/api')->group(function() {
+    Route::prefix('/signup')->group(function() {
+        Route::post('/', 'SignUpController@storeUser');
+    });
+});
