@@ -28,4 +28,7 @@ Route::prefix('/api')->group(function() {
     Route::prefix('/signup')->group(function() {
         Route::post('/', 'SignUpController@storeUser');
     });
+    Route::prefix('/login')->group(function() {
+        Route::post('/', 'LoginController@check_login');
+    });
 });
