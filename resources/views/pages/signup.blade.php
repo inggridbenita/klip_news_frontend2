@@ -7,7 +7,7 @@
 @section('content')
   @include('includes.header')
   <div id=formContainer>
-    <form action="/api/signup", method="POST">
+    <form action="/api/signup", method="POST" id="form">
       @csrf
       <div class="left-side">
         <h2>CREATE YOUR OWN ACCOUNT</h2>

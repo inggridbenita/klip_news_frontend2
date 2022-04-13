@@ -7,7 +7,7 @@
 @section('content')
   @include('includes.header')
   <div id=formContainer>
-    <form action="/api/login", method="POST">
+    <form action="/api/login", method="POST" id="form">
       <div class="left-side">
         @csrf
         <label for="">EMAIL / PHONE NUMBER</label>
