@@ -33,4 +33,5 @@ Route::prefix('/api')->group(function() {
     Route::prefix('/login')->group(function() {
         Route::post('/', 'LoginController@check_login');
     });
+    Route::post('/logout', 'LogoutController@logout');
 });

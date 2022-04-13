@@ -1,12 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  @include('includes.meta')
+  @include('includes.style')
+  <title>KLIP News</title>
+  <link rel="stylesheet" href="/css/pages/user/home.css">
 </head>
 <body>
-  <h1>Halaman Home</h1>
+  @include('includes.header')
+  <aside>
+    <h1>Welcome</h1>
+    <h2>Username</h2>
+    <hr>
+    <button id="btnLogout">Logout</button>
+  </aside>
+  @include('includes.script')
+  <script src="/js/pages/user/home.js"></script>
 </body>
 </html>

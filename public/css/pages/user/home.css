@@ -1,0 +1,18 @@
+body {
+  background-color: blueviolet;
+}
+
+aside {
+  background-color: #D8D4D4;
+  height: 90vh;
+  width: 20%;
+}
+
+aside h1, aside h2 {
+  margin: 0px;
+}
+
+hr {
+  color: black;
+  background-color: black;
+}
