@@ -1,0 +1,62 @@
+aside {
+  height: 90vh;
+  background-color: #D8D4D4;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+aside h1, aside h2 {
+  font-weight: 100;
+  margin: 0px 0px 0px 5px;
+}
+
+aside h1 {
+  font-size: 30px;
+}
+
+aside h2 {
+  font-size: 20px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1; /* number of lines to show */
+          line-clamp: 1; 
+  -webkit-box-orient: vertical;
+}
+
+aside hr {
+  color: black;
+  background-color: black;
+}
+
+aside .menu-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+aside .menu-item:hover {
+  cursor: pointer;
+}
+
+aside .menu-item img {
+  width: 38px;
+  height: 38px;
+}
+
+aside .menu-item p {
+  margin: 0px;
+  margin-left: 10px;
+}
+
+aside .bottom-side {
+  align-self: center;
+  margin-bottom: 10px;
+}
+
+#btnLogout:hover {
+  cursor: pointer;
+}

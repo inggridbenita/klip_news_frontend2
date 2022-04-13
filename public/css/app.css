@@ -8,3 +8,28 @@ body {
   font-family: Roboto;
   font-weight: 300;
 }
+
+#mainRoot {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+}
+
+.btn {
+  background-color: #B5AAAA;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  font-size: 0.9rem;
+  font-family: Roboto;
+  font-weight: 300;
+}
+
+aside {
+  height: 90vh;
+}
+
+#mainContent {
+  height: 90vh;
+  overflow: scroll;
+}
