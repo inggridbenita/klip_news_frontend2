@@ -17,7 +17,7 @@ class LoginController extends Controller
         $isSuccessLogin = User::check_login($request->email, $request->password);
         if ($isSuccessLogin) {
             $user_id = User::where('email', $request->email)->pluck('id')[0];
-            session('id', $user_id);
+            session(['id' => $user_id]);
         }
         return json_encode($isSuccessLogin);
     }

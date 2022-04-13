@@ -5,7 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Http\Request;
 
-class IsNotLogin
+class IsLogin
 {
     /**
      * Handle an incoming request.
@@ -17,9 +17,9 @@ class IsNotLogin
     public function handle(Request $request, Closure $next)
     {
         $id = session('id', 0);
-        if ($id == 0) {  // jika tidak login
-            return $next($request);
+        if ($id == 0) {
+            return redirect()->route('login');
         }
-        return redirect()->route('home');
+        return $next($request);
     }
 }

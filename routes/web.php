@@ -22,16 +22,21 @@ Route::get('/test', 'LoginController@check_login');
 Route::middleware('IsNotLogin')->group(function() {
     Route::get('/login', 'LoginController@index')->name('login');
     Route::get('/signup', 'SignUpController@index')->name('signup');
+
+    Route::prefix('/api')->group(function() {
+        Route::prefix('/signup')->group(function() {
+            Route::post('/', 'SignUpController@storeUser');
+        });
+        Route::prefix('/login')->group(function() {
+            Route::post('/', 'LoginController@check_login');
+        });
+    });
 });
 
-Route::get('/home', 'user\\HomeController@index')->name('home');
-
-Route::prefix('/api')->group(function() {
-    Route::prefix('/signup')->group(function() {
-        Route::post('/', 'SignUpController@storeUser');
+Route::middleware('IsLogin')->group(function() {
+    Route::get('/home', 'user\\HomeController@index')->name('home');
+    
+    Route::prefix('/api')->group(function() {
+        Route::post('/logout', 'LogoutController@logout');
     });
-    Route::prefix('/login')->group(function() {
-        Route::post('/', 'LoginController@check_login');
-    });
-    Route::post('/logout', 'LogoutController@logout');
 });
