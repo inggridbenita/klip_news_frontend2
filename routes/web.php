@@ -17,7 +17,7 @@ Route::get('/', function () {
     return redirect()->route('home');
 });
 
-Route::get('/test', 'LoginController@check_login');
+Route::get('/test', 'LoginController@check_login'); # untuk mengetes controller
 
 Route::middleware('IsNotLogin')->group(function() {
     Route::get('/login', 'LoginController@index')->name('login');
