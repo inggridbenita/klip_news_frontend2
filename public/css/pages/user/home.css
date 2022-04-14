@@ -1,0 +1,51 @@
+#head {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#head .left-side {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+#head .left-side p {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+#head .left-side p:first-child {
+  font-size: 25px;
+}
+
+#head .left-side p:not(:nth-child(1)) {
+  font-size: 20px;
+  margin-left: 10px;
+}
+
+#head .right-side {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+#head .right-side input {
+  text-align: right;
+  border: none;
+}
+
+#head .right-side input:focus {
+  text-align: right;
+  border: none;
+  outline: none;
+}
+
+#head .right-side img.ic-lup {
+  width: 36px;
+  height: 36px;
+}
+
+#head .separator {
+  margin-left: 5px;
+}
