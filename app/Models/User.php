@@ -58,4 +58,9 @@ class User extends Authenticatable
         }
         return $isPasswordTrue;
     }
+
+    public static function getUserName($userId)
+    {
+        return User::find($userId)->name;
+    }
 }

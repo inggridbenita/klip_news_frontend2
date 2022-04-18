@@ -1,7 +1,7 @@
 <aside>
   <div class="top-side">
     <h1>Welcome</h1>
-    <h2>John Doe</h2>
+    <h2>{{ $username }}</h2>
     <hr>
     <a class="menu-item">
       <img src="/images/icons/home.png" alt="Home Icon" srcset="">
