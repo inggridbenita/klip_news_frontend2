@@ -5,6 +5,22 @@ const csrf_token = document.getElementsByName("_token")[0].value;
 const inputEmail = document.getElementById("inputEmail");
 const inputPassword = document.getElementById("inputPassword");
 const passwordToggle = document.getElementById("passwordToggle");
+const alert_object = document.getElementById("alert");
+
+const checkAlert = () => {
+  const alertType = getURLParameter("alert");
+  console.log(alertType);
+  if (alertType !== null) {
+    if (alertType == "success") {
+      alert_object.style.backgroundColor = "#d4edda";
+      alert_object.style.color = "#4a653e";
+    }
+    if (getURLParameter('message_type') == 1) {
+      alert_object.innerHTML = "Pendaftaran berhasil, silakan login";
+    }
+    alert_object.style.display = "block";
+  }
+}
 
 passwordToggle.addEventListener("click", () => {
   if (inputPassword.getAttribute("type") === "password") {
@@ -32,3 +48,9 @@ form.addEventListener("submit", async (e) => {
     alert("Username atau password salah");
   }
 });
+
+const init = () => {
+  checkAlert();
+}
+
+init();

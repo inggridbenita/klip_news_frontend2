@@ -9,6 +9,7 @@
   <div id=formContainer>
     <form action="/api/login", method="POST" id="form">
       <div class="left-side">
+        <div id="alert"></div>
         @csrf
         <label for="">EMAIL / PHONE NUMBER</label>
         <div class="inputWrapper">

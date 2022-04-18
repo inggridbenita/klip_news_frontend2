@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Redirect;
 
 class SignUpController extends Controller
 {
@@ -24,6 +25,6 @@ class SignUpController extends Controller
         $user->password = Hash::make($request->password);
         $user->save();
 
-        return $request->name;
+        return Redirect::to("http://127.0.0.1:8000/login?alert=success&message_type=1");
     }
 }
