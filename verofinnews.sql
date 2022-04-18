@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 14, 2022 at 08:03 AM
+-- Generation Time: Apr 18, 2022 at 05:32 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.2
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `klip_news`
+-- Database: `verofinnews`
 --
 
 -- --------------------------------------------------------
@@ -42,7 +42,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `phone_number`, `password`, `created_at`, `updated_at`) VALUES
-(1, 'Naufal Muafa', 'naufalmuafa77@gmail.com', '082322286759', '$2y$10$uitkvZwkUxbHQYfPrwQ5WOMMe7P27rjTHhir9WVIg.viby.x96rPi', '2022-04-12 08:39:32', '2022-04-12 08:39:32');
+(1, 'Naufal Muafa', 'naufalmuafa77@gmail.com', '082322286759', '$2y$10$aL8KZ4Xv.pmZbC19HXoN2uT9t1QtFP1hT9k7RxiEopamQmI.OUViK', '2022-04-18 02:48:27', '2022-04-18 02:48:27');
 
 --
 -- Indexes for dumped tables
