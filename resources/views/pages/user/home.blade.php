@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-  KLIP News
+  Verofin News
 @endsection
 
 @push('add-on-style')
