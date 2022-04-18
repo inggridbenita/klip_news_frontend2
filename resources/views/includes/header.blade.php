@@ -1,3 +1,3 @@
 <header>
-  <p>KLIPNews</p>
+  <p>Verofin News</p>
 </header>
