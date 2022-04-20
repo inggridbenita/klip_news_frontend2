@@ -1,0 +1,27 @@
+main#content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 25px;
+}
+
+main#content img, main#content h1, main#content p, main#content div {
+  width: 80%;
+  align-self: center;
+}
+
+main#content h1 {
+  font-weight: 700;
+  font-size: 35px;
+  margin-bottom: 0px;
+}
+
+main#content p {
+  font-weight: 200;
+  font-size: 20px;
+}
+
+main#content div {
+  font-weight: 200;
+  font-size: 25px;
+}

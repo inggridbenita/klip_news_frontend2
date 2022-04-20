@@ -25,6 +25,10 @@ body {
   font-weight: 300;
 }
 
+button:hover {
+  cursor: pointer;
+}
+
 aside {
   height: 90vh;
 }

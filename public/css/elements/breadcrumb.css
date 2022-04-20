@@ -1,0 +1,18 @@
+#breadcrumb ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+}
+
+#breadcrumb ul li a {
+  text-decoration: none;
+  color: brown;
+}
+
+#breadcrumb ul li:first-child {
+  margin-left: 0px;
+}
+
+#breadcrumb ul li {
+  margin-left: 5px;
+}
