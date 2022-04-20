@@ -33,4 +33,5 @@ aside {
   height: 90vh;
   overflow: scroll;
   padding: 10px;
+  overflow-x: hidden;
 }

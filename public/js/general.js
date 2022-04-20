@@ -104,3 +104,13 @@ function convertDiseaseToOrder(disease) {
 function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
+
+function convertCategoryToReadable(category) {
+  if (category == "gaya_hidup") {
+    category = "Gaya Hidup";
+  }
+  else {
+    category = "Hiburan";
+  }
+  return category;
+}

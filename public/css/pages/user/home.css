@@ -49,3 +49,38 @@
 #head .separator {
   margin-left: 5px;
 }
+
+main#content {
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto auto;
+  row-gap: 30px;
+  margin-top: 45px;
+}
+
+a.news {
+  text-decoration: none;
+  color: black;
+}
+
+.news {
+  width: 300px;
+  justify-self: center;
+}
+
+.news img {
+  width: 100%;
+  height: 168px;
+}
+
+.news p {
+  margin: 0px;
+}
+
+.news p.title {
+  font-weight: 700;
+}
+
+.news p.time, .news p.category {
+  font-weight: 200;
+}
