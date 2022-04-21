@@ -25,6 +25,7 @@
           <img src="/images/icons/hide.png" alt="" srcset="" class="right-icon" id="passwordToggle">
         </div>
         <button type="submit">Login</button>
+        <p id="forgotPasswordAnchor"><a href="/forgot_password">Forgot Password?</a></p>
       </div>
       <div class="right-side">
         <p>No Account?</p>
