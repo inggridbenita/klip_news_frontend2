@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use PHPUnit\TextUI\XmlConfiguration\Group;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,11 +18,23 @@ Route::get('/', function () {
     return redirect()->route('home');
 });
 
-Route::get('/test', 'LoginController@check_login'); # untuk mengetes controller
+// Route::get('/test', 'api\\mail\\ResetPasswordController@index');
+
+Route::prefix('/api')->group(function() {
+    Route::prefix('/user')->group(function() {
+        Route::get('/check_exist_by_email', 'api\\UserController@checkExistByEmail');
+        Route::post('/reset_password', 'api\\UserController@resetPassword');
+    });
+    Route::prefix('/mail')->group(function() {
+        Route::post('/reset_password_mail', 'api\\mail\\ResetPasswordController@index');
+    });
+});
 
 Route::middleware('IsNotLogin')->group(function() {
     Route::get('/login', 'LoginController@index')->name('login');
     Route::get('/signup', 'SignUpController@index')->name('signup');
+    Route::get('/forgot_password/change_password', 'ForgotPasswordController@reset_password');
+    Route::get('/forgot_password', 'ForgotPasswordController@begin_reset_password');
 
     Route::prefix('/api')->group(function() {
         Route::prefix('/signup')->group(function() {

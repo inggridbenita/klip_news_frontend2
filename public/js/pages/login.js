@@ -18,6 +18,9 @@ const checkAlert = () => {
     if (getURLParameter('message_type') == 1) {
       alert_object.innerHTML = "Pendaftaran berhasil, silakan login";
     }
+    else if (getURLParameter('message_type') == 2) {
+      alert_object.innerHTML = "Berhasil ubah password, silakan login";
+    }
     alert_object.style.display = "block";
   }
 }
