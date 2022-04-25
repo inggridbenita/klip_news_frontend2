@@ -64,6 +64,36 @@ function convertMonthIntToStringBahasa(intMonth) {
   return stringMonth;
 }
 
+function convertWeekdayEnglishToBahasa(weekday) {
+  stringWeekday = "";
+  switch (weekday) {
+    case "Monday":
+      stringWeekday = "Senin";
+      break;
+    case "Tuesday":
+      stringWeekday = "Selasa";
+      break;
+    case "Wednesday":
+      stringWeekday = "Rabu";
+      break;
+    case "Thursday":
+      stringWeekday = "Kamis";
+      break;
+    case "Friday":
+      stringWeekday = "Jum'at";
+      break;
+    case "Saturday":
+      stringWeekday = "Sabtu";
+      break;
+    case "Sunday":
+      stringWeekday = "Minggu";
+      break;
+    default :
+      break;
+  }
+  return stringWeekday;
+}
+
 function getURLParameter(parameter) {
   const queryString = window.location.search;
   const urlParams = new URLSearchParams(queryString);
