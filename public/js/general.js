@@ -144,3 +144,15 @@ function convertCategoryToReadable(category) {
   }
   return category;
 }
+
+function parseDateFromBackEnd(date, weekday) {
+  date = Date.parse(date);
+  date = new Date(date);
+  const newDate = date.getDate();
+  const month = date.getMonth();
+  const year = date.getUTCFullYear();
+  const hours = date.getHours();
+  const minutes = date.getMinutes();
+  weekday = convertWeekdayEnglishToBahasa(weekday);
+  return `${weekday}, ${newDate} ${convertMonthIntToStringBahasa(month)} ${year} ${hours}:${minutes}`;
+}

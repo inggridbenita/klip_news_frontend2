@@ -8,7 +8,7 @@ const getNewsDetail = async (newsId) => {
 
   document.getElementById("newsHeader").setAttribute("src", news["poster"]);
   document.getElementById("title").innerHTML = news["title"];
-  document.getElementById("date").innerHTML = news["date"];
+  document.getElementById("date").innerHTML = parseDateFromBackEnd(news["date"], news["weekday"]);
   document.getElementById("newsContent").innerHTML = content;
 }
 

@@ -17,18 +17,7 @@ const displayAllNews = async () => {
     clone.querySelector("img").setAttribute("src", item["poster"]);
     clone.querySelector("p").innerHTML = item["title"];
     clone.querySelector(".category").innerHTML = category;
-
-    item["date"] = Date.parse(item["date"]);
-    item["date"] = new Date(item["date"]);
-    const date = item["date"].getDate();
-    const month = item["date"].getMonth();
-    const year = item["date"].getUTCFullYear();
-    const hours = item["date"].getHours();
-    const minutes = item["date"].getMinutes();
-
-    const weekday = convertWeekdayEnglishToBahasa(item["weekday"]);
-    item["date"] = `${date} ${convertMonthIntToStringBahasa(month)} ${year} ${hours}:${minutes}`;
-    clone.querySelector(".time").innerHTML = `${weekday}, ${item["date"].toString()}`;
+    clone.querySelector(".time").innerHTML = parseDateFromBackEnd(item["date"], item["weekday"]);
 
     newsContainer.append(clone);
   }
