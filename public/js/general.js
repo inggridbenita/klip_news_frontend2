@@ -1,7 +1,8 @@
-console.log("general.js");
+/* eslint-disable no-unused-vars */
+console.log('general.js');
 
 function getMeta(metaName) {
-  const metas = document.getElementsByTagName("meta");
+  const metas = document.getElementsByTagName('meta');
   for (let i = 0; i < metas.length; i++) {
     if (metas[i].getAttribute('name') === metaName) {
       return metas[i].getAttribute('content');
@@ -13,50 +14,50 @@ function getMeta(metaName) {
 
 function convertToRupiah(angka)
 {
-	var rupiah = '';		
-	var angkarev = angka.toString().split('').reverse().join('');
-	for(var i = 0; i < angkarev.length; i++) if(i%3 == 0) rupiah += angkarev.substr(i,3)+'.';
-	return 'Rp. ' + rupiah.split('',rupiah.length-1).reverse().join('');
+  let rupiah = '';
+  const angkarev = angka.toString().split('').reverse().join('');
+  for (let i = 0; i < angkarev.length; i++) if (i % 3 == 0) rupiah += `${angkarev.substr(i, 3)}.`;
+  return `Rp. '${rupiah.split('', rupiah.length - 1).reverse().join('')}`;
 }
 
 function convertMonthIntToStringBahasa(intMonth) {
-  stringMonth = "";
+  stringMonth = '';
   switch (intMonth) {
     case 1:
-      stringMonth = "Januari";
+      stringMonth = 'Januari';
       break;
     case 2:
-      stringMonth = "Februari";
+      stringMonth = 'Februari';
       break;
     case 3:
-      stringMonth = "Maret";
+      stringMonth = 'Maret';
       break;
     case 4:
-      stringMonth = "April";
+      stringMonth = 'April';
       break;
     case 5:
-      stringMonth = "Mei";
+      stringMonth = 'Mei';
       break;
     case 6:
-      stringMonth = "Juni";
+      stringMonth = 'Juni';
       break;
     case 7:
-      stringMonth = "Juli";
+      stringMonth = 'Juli';
       break;
     case 8:
-      stringMonth = "Agustus";
+      stringMonth = 'Agustus';
       break;
     case 9:
-      stringMonth = "September";
+      stringMonth = 'September';
       break;
     case 10:
-      stringMonth = "Okober";
+      stringMonth = 'Okober';
       break;
     case 11:
-      stringMonth = "November";
+      stringMonth = 'November';
       break;
     case 12:
-      stringMonth = "Desember";
+      stringMonth = 'Desember';
       break;
     default:
       break;
@@ -65,30 +66,30 @@ function convertMonthIntToStringBahasa(intMonth) {
 }
 
 function convertWeekdayEnglishToBahasa(weekday) {
-  stringWeekday = "";
+  stringWeekday = '';
   switch (weekday) {
-    case "Monday":
-      stringWeekday = "Senin";
+    case 'Monday':
+      stringWeekday = 'Senin';
       break;
-    case "Tuesday":
-      stringWeekday = "Selasa";
+    case 'Tuesday':
+      stringWeekday = 'Selasa';
       break;
-    case "Wednesday":
-      stringWeekday = "Rabu";
+    case 'Wednesday':
+      stringWeekday = 'Rabu';
       break;
-    case "Thursday":
-      stringWeekday = "Kamis";
+    case 'Thursday':
+      stringWeekday = 'Kamis';
       break;
-    case "Friday":
+    case 'Friday':
       stringWeekday = "Jum'at";
       break;
-    case "Saturday":
-      stringWeekday = "Sabtu";
+    case 'Saturday':
+      stringWeekday = 'Sabtu';
       break;
-    case "Sunday":
-      stringWeekday = "Minggu";
+    case 'Sunday':
+      stringWeekday = 'Minggu';
       break;
-    default :
+    default:
       break;
   }
   return stringWeekday;
@@ -127,32 +128,32 @@ function convertDiseaseToOrder(disease) {
     case 'Demam Berdarah':
       order = 8;
       break;
+    default:
+      order = 0;
   }
   return order;
 }
 
 function sleep(ms) {
-  return new Promise(resolve => setTimeout(resolve, ms));
+  // eslint-disable-next-line no-promise-executor-return
+  return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
 function convertCategoryToReadable(category) {
-  if (category == "gaya_hidup") {
-    category = "Gaya Hidup";
-  }
-  else {
-    category = "Hiburan";
-  }
-  return category;
+  return category == 'gaya_hidup' ? 'Gaya Hidup' : 'Hiburan';
 }
 
 function parseDateFromBackEnd(date, weekday) {
+  // eslint-disable-next-line no-param-reassign
   date = Date.parse(date);
+  // eslint-disable-next-line no-param-reassign
   date = new Date(date);
   const newDate = date.getDate();
   const month = date.getMonth();
   const year = date.getUTCFullYear();
   const hours = date.getHours();
   const minutes = date.getMinutes();
+  // eslint-disable-next-line no-param-reassign
   weekday = convertWeekdayEnglishToBahasa(weekday);
   return `${weekday}, ${newDate} ${convertMonthIntToStringBahasa(month)} ${year} ${hours}:${minutes}`;
 }

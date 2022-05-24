@@ -1,10 +1,10 @@
-console.log("Forgot Password");
+console.log('Forgot Password');
 
-const form = document.getElementById("form");
-const inputEmail = document.getElementById("inputEmail");
-const smallInfo = document.getElementById("info");
+const form = document.getElementById('form');
+const inputEmail = document.getElementById('inputEmail');
+const smallInfo = document.getElementById('info');
 
-form.addEventListener("submit", async (e) => {
+form.addEventListener('submit', async (e) => {
   e.preventDefault();
   const email = inputEmail.value;
   let response = await fetch(`http://127.0.0.1:8000/api/user/check_exist_by_email?email=${email}`);
@@ -12,7 +12,7 @@ form.addEventListener("submit", async (e) => {
   const isEmailTrue = await JSON.parse(response);
   if (isEmailTrue) {
     const myHeaders = new Headers();
-    myHeaders.append("Content-Type", "application/json");
+    myHeaders.append('Content-Type', 'application/json');
     const raw = JSON.stringify({
       _token: getMeta('csrf-token'),
       email,
@@ -23,11 +23,11 @@ form.addEventListener("submit", async (e) => {
       body: raw,
       headers: myHeaders,
     };
-    response = await fetch(`http://127.0.0.1:8000/api/mail/reset_password_mail`, requestOptions);
-    smallInfo.innerHTML = "Check your email!";
+    response = await fetch('http://127.0.0.1:8000/api/mail/reset_password_mail', requestOptions);
+    smallInfo.innerHTML = 'Check your email!';
   }
   else {
-    smallInfo.innerHTML = "Email not registered!";
+    smallInfo.innerHTML = 'Email not registered!';
   }
-  smallInfo.style.display = "inherit";
+  smallInfo.style.display = 'inherit';
 });
