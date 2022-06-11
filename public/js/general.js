@@ -1,4 +1,5 @@
 /* eslint-disable no-unused-vars */
+/* eslint-disable no-param-reassign */
 console.log('general.js');
 
 function getMeta(metaName) {
@@ -144,16 +145,19 @@ function convertCategoryToReadable(category) {
 }
 
 function parseDateFromBackEnd(date, weekday) {
-  // eslint-disable-next-line no-param-reassign
   date = Date.parse(date);
-  // eslint-disable-next-line no-param-reassign
   date = new Date(date);
   const newDate = date.getDate();
   const month = date.getMonth();
   const year = date.getUTCFullYear();
-  const hours = date.getHours();
-  const minutes = date.getMinutes();
-  // eslint-disable-next-line no-param-reassign
+  let hours = date.getHours();
+  let minutes = date.getMinutes();
   weekday = convertWeekdayEnglishToBahasa(weekday);
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
   return `${weekday}, ${newDate} ${convertMonthIntToStringBahasa(month)} ${year} ${hours}:${minutes}`;
 }
