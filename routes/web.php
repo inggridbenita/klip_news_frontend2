@@ -48,7 +48,9 @@ Route::middleware('IsNotLogin')->group(function() {
 
 Route::middleware('IsLogin')->group(function() {
     Route::get('/home', 'user\\HomeController@index')->name('home');
-    Route::get('/baca', 'user\\ReadController@index')->name('baca');
+    Route::get('/baca', 'user\\ReadController@index')
+        ->middleware('AddNewsToHistories')
+        ->name('baca');
     
     Route::prefix('/api')->group(function() {
         Route::post('/logout', 'LogoutController@logout');
