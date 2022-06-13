@@ -4,6 +4,7 @@
   @include('includes.meta')
   @include('includes.style')
   <title>@yield('title')</title>
+  <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">  
   @stack('add-on-style')
 </head>
 <body>

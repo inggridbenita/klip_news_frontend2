@@ -4,6 +4,7 @@
   @include('includes.meta')
   <title>Change Password</title>
   @include('includes.style')
+  <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="/css/pages/forgot_password/change_password.css">
 </head>
 <body>
