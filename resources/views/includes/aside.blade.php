@@ -8,7 +8,7 @@
       <p>Home</p>
     </a>
 
-    <a class="menu-item">
+    <a href="/history" class="menu-item">
       <img src="/images/icons/history.png" alt="Home Icon" srcset="">
       <p>History</p>
     </a>

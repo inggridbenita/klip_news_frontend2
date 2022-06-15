@@ -1,6 +1,6 @@
 console.log('home');
 
-const newsContainer = document.getElementById('content');
+const newsContainer = document.getElementById('news-list');
 
 const displayAllNews = async () => {
   let response = await fetch('http://127.0.0.1:5000/get_all_news');

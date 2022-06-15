@@ -1,3 +1,5 @@
+const firstBreadcrumbLink = document.getElementById('first-breadcrumb-link');
+
 const getNewsDetail = async (newsId) => {
   let response = await fetch(`http://127.0.0.1:5000/get_news_detail?id=${newsId}`);
   response = await response.text();
@@ -14,6 +16,11 @@ const getNewsDetail = async (newsId) => {
 
 const init = () => {
   const news_id = getURLParameter('id');
+  const from = getURLParameter('from');
+  if (from === 'history') {
+    firstBreadcrumbLink.innerHTML = 'History';
+    firstBreadcrumbLink.setAttribute('href', '/history');
+  }
   getNewsDetail(news_id);
 };
 

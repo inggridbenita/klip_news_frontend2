@@ -1,0 +1,7 @@
+main#news-list {
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto auto;
+  row-gap: 30px;
+  margin-top: 45px;
+}

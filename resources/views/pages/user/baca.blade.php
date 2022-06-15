@@ -12,7 +12,7 @@
 @section('content')
   <div id="breadcrumb">
     <ul>
-      <li><a href="/home">Home</a></li>
+      <li><a href="/home" id="first-breadcrumb-link">Home</a></li>
       <li>/</li>
       <li>Baca</li>
     </ul>
