@@ -1,0 +1,8 @@
+.category-menu:hover {
+  cursor: pointer;
+}
+
+
+.category-menu.selected {
+  font-weight: 700;
+}
