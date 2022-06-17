@@ -9,7 +9,7 @@ const getHistories = async () => {
   return newsIds;
 };
 
-const displayNewsHistory = async (newsIds) => {
+const displayNewsByNewsIds = async (newsIds) => {
   const headers = new Headers();
   headers.append('Content-Type', 'application/json');
   const raw = JSON.stringify(newsIds);
@@ -43,7 +43,7 @@ const displayNewsHistory = async (newsIds) => {
 const init = async () => {
   let newsIds = await getHistories();
   newsIds = newsIds.map((id) => id.news_id);
-  await displayNewsHistory(newsIds);
+  await displayNewsByNewsIds(newsIds);
 };
 
 init();
