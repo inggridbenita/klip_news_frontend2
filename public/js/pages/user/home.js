@@ -4,6 +4,7 @@ console.log('home');
 let currentNews = [];
 
 const newsContainer = document.getElementById('news-list');
+const inputSearchNews = document.getElementById('inputSearchNews');
 
 const clearNewsList = () => {
   newsContainer.innerHTML = '';
@@ -57,9 +58,9 @@ const getNewsDetailByNewsIds = async (newsIds) => {
   return news.news;
 };
 
-const renderNews = () => {
+const trueRenderNews = (arrNews) => {
   clearNewsList();
-  for (item of currentNews) {
+  for (item of arrNews) {
     const template = document.getElementById('newsTemplate');
 
     const category = convertCategoryToReadable(item.category);
@@ -75,25 +76,18 @@ const renderNews = () => {
   }
 };
 
+const renderNews = () => {
+  inputSearchNews.value = '';
+  trueRenderNews(currentNews);
+};
+
 const renderFilteredNews = (e) => {
   const keyword = e.target.value;
-  const filteredNews = currentNews.filter(
-    (news) => news.title.toLowerCase().includes(keyword.toLowerCase()),
-  );
-  clearNewsList();
-  for (item of filteredNews) {
-    const template = document.getElementById('newsTemplate');
-
-    const category = convertCategoryToReadable(item.category);
-
-    const clone = template.content.cloneNode(true);
-    clone.querySelector('a').setAttribute('href', `/baca?id=${item.id}`);
-    clone.querySelector('img').setAttribute('src', item.poster);
-    clone.querySelector('p').innerHTML = item.title;
-    clone.querySelector('.category').innerHTML = category;
-    clone.querySelector('.time').innerHTML = parseDateFromBackEnd(item.date, item.weekday);
-
-    newsContainer.append(clone);
+  if (keyword !== '') {
+    const filteredNews = currentNews.filter(
+      (news) => news.title.toLowerCase().includes(keyword.toLowerCase()),
+    );
+    trueRenderNews(filteredNews);
   }
 };
 
@@ -134,7 +128,7 @@ const init = async () => {
     currentNews = news;
     renderNews();
   }
-  document.getElementById('inputSearchNews').addEventListener('input', renderFilteredNews);
+  inputSearchNews.addEventListener('input', renderFilteredNews);
   console.log(currentNews);
 };
 
