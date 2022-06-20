@@ -1,6 +1,7 @@
 console.log('history');
 
 const newsContainer = document.getElementById('news-list');
+const emptyHistoryAlert = document.getElementById('empty-history-alert');
 
 const getHistories = async () => {
   let response = await fetch('http://127.0.0.1:8000/api/history');
@@ -37,6 +38,10 @@ const displayNewsByNewsIds = async (newsIds) => {
     clone.querySelector('.time').innerHTML = parseDateFromBackEnd(item.date, item.weekday);
 
     newsContainer.append(clone);
+  }
+
+  if (news.length === 0) {
+    emptyHistoryAlert.style.display = 'flex';
   }
 };
 
