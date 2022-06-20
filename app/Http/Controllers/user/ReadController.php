@@ -14,6 +14,7 @@ class ReadController extends Controller
         $username = User::getUserName($userId);
         $data = [
             "username" => $username,
+            "page_name" => "read",
         ];
         return view('pages.user.baca', $data);
     }

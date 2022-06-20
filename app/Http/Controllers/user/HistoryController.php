@@ -14,6 +14,7 @@ class HistoryController extends Controller
         $username = User::getUserName($userId);
         $data = [
             "username" => $username,
+            "page_name" => "history",
         ];
         return view('pages.user.history', $data);
     }

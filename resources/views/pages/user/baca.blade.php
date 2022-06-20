@@ -27,4 +27,5 @@
 
 @push('add-on-script')
   <script src="/js/pages/user/baca.js"></script>
+  <script src="/js/component/aside.js"></script>
 @endpush

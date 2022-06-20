@@ -16,4 +16,5 @@
 
 @push('add-on-script')
   <script src="/js/pages/user/history.js"></script>
+  <script src="/js/component/aside.js"></script>
 @endpush

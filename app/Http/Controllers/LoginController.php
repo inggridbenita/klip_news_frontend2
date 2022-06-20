@@ -9,7 +9,10 @@ class LoginController extends Controller
 {
     public function index(Request $request)
     {
-        return view('pages.login');
+        $data = [
+            "page_name" => "login",
+        ];
+        return view('pages.login', $data);
     }
 
     public function check_login(Request $request)

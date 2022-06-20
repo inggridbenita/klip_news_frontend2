@@ -5,17 +5,17 @@
     <hr>
     <a href="/home" class="menu-item">
       <img src="/images/icons/home.png" alt="Home Icon" srcset="">
-      <p>Home</p>
+      <p id="home-aside-menu-label">Home</p>
     </a>
 
     <a href="/history" class="menu-item">
-      <img src="/images/icons/history.png" alt="Home Icon" srcset="">
-      <p>History</p>
+      <img src="/images/icons/history.png" alt="History Icon" srcset="">
+      <p id="history-aside-menu-label">History</p>
     </a>
 
     <a class="menu-item">
-      <img src="/images/icons/profile.png" alt="Home Icon" srcset="">
-      <p>Profile</p>
+      <img src="/images/icons/profile.png" alt="Profile Icon" srcset="">
+      <p id="profile-aside-menu-label">Profile</p>
     </a>
   </div>
   <div class="bottom-side">

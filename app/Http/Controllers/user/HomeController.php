@@ -14,6 +14,7 @@ class HomeController extends Controller
         $username = User::getUserName($userId);
         $data = [
             "username" => $username,
+            "page_name" => "home",
         ];
         return view('pages.user.home', $data);
     }

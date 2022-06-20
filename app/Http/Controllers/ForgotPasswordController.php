@@ -10,7 +10,10 @@ class ForgotPasswordController extends Controller
 {
     public function begin_reset_password()
     {
-        return view('pages.forgot_password.forgot_password');
+        $data = [
+            "page_name" => "begin_reset_password",
+        ];
+        return view('pages.forgot_password.forgot_password', $data);
     }
 
     public function reset_password(Request $request)

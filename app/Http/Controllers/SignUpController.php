@@ -11,7 +11,10 @@ class SignUpController extends Controller
 {
     public function index()
     {
-        return view('pages.signup');
+        $data = [
+            "page_name" => "signup",
+        ];
+        return view('pages.signup', $data);
     }
 
     public function storeUser(Request $request)
