@@ -28,6 +28,10 @@
   <p id="info-search-result">Hasil pencarian: ""</p>
   <main id="news-list"></main>
   @include('includes.newsTemplate')
+  <section id="empty-history-alert">
+    <img src="/images/icons/alert_cross_circle.png" alt="alert_cross_circle logo">
+    <h3>You haven't found any news</h3>
+  </section>
 @endsection
 
 @push('add-on-script')
