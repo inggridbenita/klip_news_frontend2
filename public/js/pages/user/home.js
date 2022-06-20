@@ -6,7 +6,6 @@ let currentNews = [];
 const newsContainer = document.getElementById('news-list');
 const inputSearchNews = document.getElementById('inputSearchNews');
 const InfoSearchResult = document.getElementById('info-search-result');
-const emptyHistoryAlert = document.getElementById('empty-history-alert');
 
 const displayInfoSearchResult = (keyword) => {
   InfoSearchResult.innerHTML = `Hasil pencarian "${keyword}"`;
@@ -89,7 +88,7 @@ const trueRenderNews = (arrNews) => {
 };
 
 const renderNews = () => {
-  emptyHistoryAlert.style.display = 'none';
+  hideEmptyVideoAlert();
   hideInfoSearchResult();
   inputSearchNews.value = '';
   trueRenderNews(currentNews);
@@ -104,10 +103,10 @@ const renderFilteredNews = (e) => {
     trueRenderNews(filteredNews);
     displayInfoSearchResult(keyword);
     if (filteredNews.length === 0) {
-      emptyHistoryAlert.style.display = 'flex';
+      displayEmptyVideoAlert();
     }
     else {
-      emptyHistoryAlert.style.display = 'none';
+      hideEmptyVideoAlert();
     }
   }
   else {

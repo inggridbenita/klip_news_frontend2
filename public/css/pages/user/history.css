@@ -2,21 +2,3 @@
   font-weight: 300;
   margin-left: 20px;
 }
-
-#empty-history-alert {
-  display: none; /* from flex*/
-  flex-direction: column;
-}
-
-#empty-history-alert img, #empty-history-alert h3 {
-  align-self: center;
-}
-
-#empty-history-alert img {
-  width: 60px;
-  height: 60px;
-}
-
-#empty-history-alert h3 {
-  font-weight: 300;
-}
