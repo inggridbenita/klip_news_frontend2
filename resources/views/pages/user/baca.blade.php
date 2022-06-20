@@ -18,7 +18,7 @@
     </ul>
   </div>
   <main id="content">
-    <img src="/images/rectangle_placeholder.png" alt="" id="newsHeader">
+    <img src="" alt="News Header" id="newsHeader">
     <h1 class="title" id="title">Judul Berita</h1>
     <p class="date" id="date">Timestamp</p>
     <div id="newsContent" id="newsContent">Konten</div>
