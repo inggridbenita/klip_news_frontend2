@@ -8,10 +8,10 @@
   @stack('add-on-style')
 </head>
 <body>
-  @include('includes.header')
+  @include('includes.component.header')
   
   <main id="mainRoot">
-    @include('includes.aside')
+    @include('includes.component.aside')
     <main id="mainContent">
       @yield('content')
     </main>

@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-  @include('includes.header')
+  @include('includes.component.header')
   <div id=formContainer>
     <form action="/api/login", method="POST" id="form">
       <div class="left-side">

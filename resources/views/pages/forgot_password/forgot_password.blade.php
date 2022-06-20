@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="/css/pages/forgot_password/forgot_password.css">
 </head>
 <body>
-  @include('includes.header')
+  @include('includes.component.header')
   <form action="/api/mail/reset_password_mail" method="POST" id="form">
     @csrf
     <label for="inputEmail">Input your email</label>
