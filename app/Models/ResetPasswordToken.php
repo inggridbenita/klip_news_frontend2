@@ -12,6 +12,9 @@ class ResetPasswordToken extends Model
     use HasFactory;
     protected $table = "reset_password_token";
 
+    protected $primaryKey = null;
+    public $incrementing = false;
+
     protected $fillable = ["user_id", "token"];
 
     public static function createResetPasswordToken($userId)

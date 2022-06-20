@@ -17,7 +17,6 @@ form.addEventListener('submit', async (e) => {
       _token: getMeta('csrf-token'),
       email,
     });
-    console.log(raw);
     const requestOptions = {
       method: 'POST',
       body: raw,

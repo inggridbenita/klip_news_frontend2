@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\ResetPasswordToken;
-use Illuminate\Auth\Notifications\ResetPassword;
 use Illuminate\Http\Request;
 
 class ForgotPasswordController extends Controller
@@ -21,10 +20,16 @@ class ForgotPasswordController extends Controller
         $isTokenExist = ResetPasswordToken::checkResetPasswordTokenExist($request->userid, $request->token);
         if ($isTokenExist) {
             ResetPasswordToken::deleteResetPasswordToken($request->userid);
-            return view('pages.forgot_password.change_password');
+            $data = [
+                "page_name" => "change_password",
+            ];
+            return view('pages.forgot_password.change_password', $data);
         }
         else {
-            return view('errors.400');
+            $data = [
+                "page_name" => "errors_400",
+            ];
+            return view('errors.400', $data);
         }
     }
 }
