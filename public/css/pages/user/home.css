@@ -6,3 +6,8 @@
 .category-menu.selected {
   font-weight: 700;
 }
+
+#info-search-result {
+  margin-bottom: 0px;
+  display: none;
+}

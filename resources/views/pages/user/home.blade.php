@@ -24,6 +24,8 @@
       <img src="/images/icons/lup.png" alt="ikon lup" srcset="" class="ic-lup">
     </div>
   </div>
+
+  <p id="info-search-result">Hasil pencarian: ""</p>
   <main id="news-list"></main>
   @include('includes.newsTemplate')
 @endsection

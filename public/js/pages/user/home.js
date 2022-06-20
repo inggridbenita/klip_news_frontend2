@@ -5,6 +5,17 @@ let currentNews = [];
 
 const newsContainer = document.getElementById('news-list');
 const inputSearchNews = document.getElementById('inputSearchNews');
+const InfoSearchResult = document.getElementById('info-search-result');
+
+const displayInfoSearchResult = (keyword) => {
+  InfoSearchResult.innerHTML = `Hasil pencarian "${keyword}"`;
+  InfoSearchResult.style.display = 'inherit';
+};
+
+const hideInfoSearchResult = () => {
+  InfoSearchResult.innerHTML = 'Hasil pencarian ""';
+  InfoSearchResult.style.display = 'none';
+};
 
 const clearNewsList = () => {
   newsContainer.innerHTML = '';
@@ -77,6 +88,7 @@ const trueRenderNews = (arrNews) => {
 };
 
 const renderNews = () => {
+  hideInfoSearchResult();
   inputSearchNews.value = '';
   trueRenderNews(currentNews);
 };
@@ -88,6 +100,10 @@ const renderFilteredNews = (e) => {
       (news) => news.title.toLowerCase().includes(keyword.toLowerCase()),
     );
     trueRenderNews(filteredNews);
+    displayInfoSearchResult(keyword);
+  }
+  else {
+    renderNews();
   }
 };
 
