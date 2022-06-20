@@ -3,6 +3,7 @@ console.log('Forgot Password');
 const form = document.getElementById('form');
 const inputEmail = document.getElementById('inputEmail');
 const smallInfo = document.getElementById('info');
+const btnBack = document.getElementById('btn-back');
 
 form.addEventListener('submit', async (e) => {
   e.preventDefault();
@@ -29,4 +30,9 @@ form.addEventListener('submit', async (e) => {
     smallInfo.innerHTML = 'Email not registered!';
   }
   smallInfo.style.display = 'inherit';
+});
+
+btnBack.addEventListener('click', (e) => {
+  e.preventDefault();
+  window.history.go(-1);
 });

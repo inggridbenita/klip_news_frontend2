@@ -22,7 +22,7 @@
       <small id="info">Text Small</small>
     </div>
     <div class="buttonWrapper" id="btnBack">
-      <button class="btn">Back</button>
+      <button class="btn" id="btn-back">Back</button>
     </div>
   </form>
   <script src="/js/general.js"></script>
