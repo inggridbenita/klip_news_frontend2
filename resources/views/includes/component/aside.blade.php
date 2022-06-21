@@ -13,7 +13,7 @@
       <p id="history-aside-menu-label">History</p>
     </a>
 
-    <a class="menu-item">
+    <a href="/profile" class="menu-item">
       <img src="/images/icons/profile.png" alt="Profile Icon" srcset="">
       <p id="profile-aside-menu-label">Profile</p>
     </a>

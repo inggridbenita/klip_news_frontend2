@@ -52,6 +52,7 @@ Route::middleware('IsLogin')->group(function() {
         ->middleware('AddNewsToHistories')
         ->name('baca');
     Route::get('/history', 'user\\HistoryController@index');
+    Route::get('/profile', 'user\\ProfileController@index');
     
     Route::prefix('/api')->group(function() {
         Route::post('/logout', 'LogoutController@logout');

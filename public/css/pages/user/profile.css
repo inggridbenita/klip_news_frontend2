@@ -1,0 +1,42 @@
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-section {
+  align-self: center;
+  position: relative;
+  width: 200px;
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+}
+
+input {
+  width: 200px;
+  padding-left: 22px;
+}
+
+.img-input {
+  height: 12px;
+  position: absolute;
+  top: 25px;
+  left: 5px;
+}
+
+.img-separator {
+  position: absolute;
+  height: 15px;
+  left: 20px;
+  top: 23px;
+}
+
+#btn-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+}
