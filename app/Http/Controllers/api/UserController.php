@@ -21,4 +21,32 @@ class UserController extends Controller
         $user->password = Hash::make($request->password);
         $user->save();
     }
+
+    public static function validateEmailAvailableForUpdate($email, $userId)
+    {
+        return User::where('email', $email)->where('id', '!=', $userId)->count() == 0;
+    }
+
+    public static function validatePhoneNumberAvailableForUpdate($phone_number, $userId)
+    {
+        return User::where('phone_number', $phone_number)->where('id', '!=', $userId)->count() == 0;
+    }
+
+    public function edit(Request $request)
+    {
+        $userId = session('id');
+        if (!UserController::validateEmailAvailableForUpdate($request->email, $userId)) {
+            return 'Email not available';
+        }
+        else if (!UserController::validatePhoneNumberAvailableForUpdate($request->phone_number, $userId)) {
+            return 'Phone number not available';
+        }
+        
+        $user = User::find($userId);
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->phone_number = $request->phone_number;
+        $user->save();
+        return 'Success';
+    }
 }

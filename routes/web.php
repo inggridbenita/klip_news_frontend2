@@ -23,6 +23,7 @@ Route::get('/', function () {
 Route::prefix('/api')->group(function() {
     Route::prefix('/user')->group(function() {
         Route::get('/check_exist_by_email', 'api\\UserController@checkExistByEmail');
+        Route::post('/edit', 'api\\UserController@edit');
         Route::post('/reset_password', 'api\\UserController@resetPassword');
     });
     Route::prefix('/mail')->group(function() {
@@ -53,6 +54,7 @@ Route::middleware('IsLogin')->group(function() {
         ->name('baca');
     Route::get('/history', 'user\\HistoryController@index');
     Route::get('/profile', 'user\\ProfileController@index');
+    Route::get('/profile/edit', 'user\\ProfileController@edit');
     
     Route::prefix('/api')->group(function() {
         Route::post('/logout', 'LogoutController@logout');

@@ -1,0 +1,50 @@
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-section {
+  align-self: center;
+  position: relative;
+  width: 200px;
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+}
+
+input {
+  width: 200px;
+  padding-left: 22px;
+}
+
+.img-input {
+  height: 12px;
+  position: absolute;
+  top: 25px;
+  left: 5px;
+}
+
+.img-separator {
+  position: absolute;
+  height: 15px;
+  left: 20px;
+  top: 23px;
+}
+
+small {
+  text-align: center;
+  color: red;
+  margin-bottom: 10px;
+  display: none;
+}
+
+#btn-section {
+  width: 200px;
+  align-self: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  text-decoration: none;
+}

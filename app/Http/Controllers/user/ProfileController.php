@@ -20,4 +20,17 @@ class ProfileController extends Controller
         ];
         return view('pages.user.profile', $data);
     }
+
+    public function edit(Request $request)
+    {
+        $userId = session('id');
+        $username = User::getUserName($userId);
+        $userProfile = User::where('id', $userId)->select()->first();
+        $data = [
+            "username" => $username,
+            "page_name" => "edit_profile",
+            "user_profile" => $userProfile,
+        ];
+        return view('pages.user.edit_profile', $data);
+    }
 }
