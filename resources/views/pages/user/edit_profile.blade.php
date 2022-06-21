@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-  Verofin News
+  Edit profile
 @endsection
 
 @push('add-on-style')
